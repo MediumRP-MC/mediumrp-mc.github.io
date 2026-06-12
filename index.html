@@ -1,126 +1,89 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MediumRP</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediumRP | Minecraft DarkRP</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-<body class="text-white">
-    <div id="root" class="text-white" style="color: white !important;">
-        <div class="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth" style="scroll-behavior: smooth;">
-            <div class="absolute w-full h-dvh -z-10 overflow-hidden">
-                <div id="currentBg" class="background-container"></div>
-                <div id="nextBg" class="background-container"></div>
-            </div>
+<body>
+    <div class="bg-layer active" id="bg1"></div>
+    <div class="bg-layer" id="bg2"></div>
+    <div class="blur-overlay"></div>
+    <div class="background-overlay"></div>
+    <div class="grid-overlay"></div>
+    <div class="glow-overlay"></div>
 
+    <div class="container">
+        <header class="header">
+            <a href="#" class="logo">
+                <img src="assets/images/logos/logo.png" alt="MediumRP Logo">
+            </a>
             
-            <div class="flex flex-col items-start justify-center w-full h-full snap-always snap-center">
-                <div class="flex-1 flex flex-col justify-center px-2 md:px-0 md:ml-28">
-                    <p class="font-bold text-5xl md:text-7xl font-apercu">
-                        Medium<span class="text-primary">RP</span>
-                    </p>
-                    <p class="text-xl md:text-3xl md:w-[700px]">
-                        Погрузитесь в уникальный <span class="text-primary">Minecraft</span> 
-                        с режимом <span class="text-primary">DarkRP</span> и эксклюзивными 
-                        <span class="text-primary">самописными</span> системами.
-                    </p>
-                    <div class="flex gap-4 mt-4">
-                        <button class="rounded-md px-4 py-3 hidden md:inline md:text-xl bg-primary hover:brightness-90 transition-colors copy-ip-btn">
-                            Начать играть
-                        </button>
-                        <button class="rounded-md px-4 py-3 md:hidden md:text-xl bg-primary hover:brightness-90 transition-colors copy-ip-btn">
-                            Скопировать IP
-                        </button>
-                        <a href="https://discord.gg/DP3PMDm7Jk" 
-                           target="_blank" 
-                           rel="noopener noreferrer"
-                           class="rounded-md inline-flex gap-1 items-center px-4 py-3 md:text-xl bg-[#5865F2] hover:brightness-90 transition-colors">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="remixicon">
-                                <path d="M19.3034 5.33716C17.9344 4.71103 16.4805 4.2547 14.9629 4C14.7719 4.32899 14.5596 4.77471 14.411 5.12492C12.7969 4.89144 11.1944 4.89144 9.60255 5.12492C9.45397 4.77471 9.2311 4.32899 9.05068 4C7.52251 4.2547 6.06861 4.71103 4.70915 5.33716C1.96053 9.39111 1.21766 13.3495 1.5891 17.2549C3.41443 18.5815 5.17612 19.388 6.90701 19.9187C7.33151 19.3456 7.71356 18.73 8.04255 18.0827C7.41641 17.8492 6.82211 17.5627 6.24904 17.2231C6.39762 17.117 6.5462 17.0003 6.68416 16.8835C10.1438 18.4648 13.8911 18.4648 17.3082 16.8835C17.4568 17.0003 17.5948 17.117 17.7434 17.2231C17.1703 17.5627 16.576 17.8492 15.9499 18.0827C16.2789 18.73 16.6609 19.3456 17.0854 19.9187C18.8152 19.388 20.5875 18.5815 22.4033 17.2549C22.8596 12.7341 21.6806 8.80747 19.3034 5.33716ZM8.5201 14.8459C7.48007 14.8459 6.63107 13.9014 6.63107 12.7447C6.63107 11.5879 7.45884 10.6434 8.5201 10.6434C9.57071 10.6434 10.4303 11.5879 10.4091 12.7447C10.4091 13.9014 9.57071 14.8459 8.5201 14.8459ZM15.4936 14.8459C14.4535 14.8459 13.6034 13.9014 13.6034 12.7447C13.6034 11.5879 14.4323 10.6434 15.4936 10.6434C16.5442 10.6434 17.4038 11.5879 17.3825 12.7447C17.3825 13.9014 16.5548 14.8459 15.4936 14.8459Z"/>
-                            </svg>
-                            Discord
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Wiki</a></li>
+                    <li><a href="#">Начать играть</a></li>
+                </ul>
+            </nav>
 
-            
-            <div class="min-h-screen py-4 flex flex-col items-center justify-center space-y-8 px-2 snap-always snap-center">
-                <div class="flex flex-col items-center">
-                    <p class="text-4xl font-bold text-center">
-                        С любовью к <span class="text-primary">мелочам</span>
-                    </p>
-                    <p class="text-muted-foreground text-center">
-                        Мы разработали множество <span class="text-primary">собственных</span> модификаций 
-                        и доработали существующие, чтобы <span class="text-primary">максимально</span> 
-                        разнообразить геймплей.
-                    </p>
+            <div class="socials">
+                <a href="#" aria-label="YouTube" class="yt-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.582 6.186a2.665 2.665 0 0 0-1.874-1.883C18.053 3.864 12 3.864 12 3.864s-6.053 0-7.708.439a2.665 2.665 0 0 0-1.874 1.883C2 7.854 2 12 2 12s0 4.146.418 5.814a2.665 2.665 0 0 0 1.874 1.883c1.655.439 7.708.439 7.708.439s6.053 0 7.708-.439a2.665 2.665 0 0 0 1.874-1.883C22 16.146 22 12 22 12s0-4.146-.418-5.814ZM9.957 14.545V9.455L14.773 12l-4.816 2.545Z"/></svg>
+                </a>
+                <a href="#" aria-label="Telegram">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.32.023.467.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.888-.662 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                </a>
+                <a href="#" aria-label="VK" class="vk-link">
+                    <img src="assets/images/logos/vk.png" alt="VK" class="vk-img">
+                </a>
+                <a href="#" aria-label="Discord" class="discord-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.03.03.03.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.02.02.05.03.08.02c1.71-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"/></svg>
+                </a>
+            </div>
+        </header>
+
+        <main class="hero">
+            <div class="hero-content">
+                <div class="online-stat">
+                    <span class="dot" id="server-dot"></span> 
+                    <span class="stat-label">Игроков онлайн:</span>
+                    <span class="stat-value" id="server-text">Загрузка...</span>
                 </div>
                 
-                <div class="flex flex-wrap justify-center gap-4 w-full lg:w-[980px] cards-wrapper">
-                    
-                    <div class="w-full md:w-fit [&amp;:nth-child(1n)]:bg-card [&amp;:nth-child(2n)]:bg-secondary [&amp;:nth-child(4n)]:bg-primary [&amp;:nth-child(5n)]:bg-destructive rounded-lg flex items-center justify-center border border-[#363c44] text-foreground shadow-sm px-6 py-4">
-                        <p>Квесты с различными наградами</p>
-                    </div>
-                    <div class="w-full md:w-fit [&amp;:nth-child(1n)]:bg-card [&amp;:nth-child(2n)]:bg-secondary [&amp;:nth-child(4n)]:bg-primary [&amp;:nth-child(5n)]:bg-destructive rounded-lg flex items-center justify-center border border-[#363c44] text-foreground shadow-sm px-6 py-4">
-                        <p>Уникальный пак оружия</p>
-                    </div>
-                    <div class="w-full md:w-fit [&amp;:nth-child(1n)]:bg-card [&amp;:nth-child(2n)]:bg-secondary [&amp;:nth-child(4n)]:bg-primary [&amp;:nth-child(5n)]:bg-destructive rounded-lg flex items-center justify-center border border-[#363c44] text-foreground shadow-sm px-6 py-4">
-                        <p>Манипринтеры прямо из Garry’s Mod</p>
-                    </div>
-                    <div class="w-full md:w-fit [&amp;:nth-child(1n)]:bg-card [&amp;:nth-child(2n)]:bg-secondary [&amp;:nth-child(4n)]:bg-primary [&amp;:nth-child(5n)]:bg-destructive rounded-lg flex items-center justify-center border border-[#363c44] text-foreground shadow-sm px-6 py-4">
-                        <p>Кастомная система скинов</p>
-                    </div>
-                    <div class="w-full md:w-fit [&amp;:nth-child(1n)]:bg-card [&amp;:nth-child(2n)]:bg-secondary [&amp;:nth-child(4n)]:bg-primary [&amp;:nth-child(5n)]:bg-destructive rounded-lg flex items-center justify-center border border-[#363c44] text-foreground shadow-sm px-6 py-4">
-                        <p>Множество уникальных профессий</p>
-                    </div>
-                    <div class="w-full md:w-fit [&amp;:nth-child(1n)]:bg-card [&amp;:nth-child(2n)]:bg-secondary [&amp;:nth-child(4n)]:bg-primary [&amp;:nth-child(5n)]:bg-destructive rounded-lg flex items-center justify-center border border-[#363c44] text-foreground shadow-sm px-6 py-4">
-                        <p>Собственная система организаций</p>
-                    </div>
-                    <div class="w-full md:w-fit [&amp;:nth-child(1n)]:bg-card [&amp;:nth-child(2n)]:bg-secondary [&amp;:nth-child(4n)]:bg-primary [&amp;:nth-child(5n)]:bg-destructive rounded-lg flex items-center justify-center border border-[#363c44] text-foreground shadow-sm px-6 py-4">
-                        <p>Ограбление ювелирного магазина</p>
-                    </div>
-                    <div class="w-full md:w-fit [&amp;:nth-child(1n)]:bg-card [&amp;:nth-child(2n)]:bg-secondary [&amp;:nth-child(4n)]:bg-primary [&amp;:nth-child(5n)]:bg-destructive rounded-lg flex items-center justify-center border border-[#363c44] text-foreground shadow-sm px-6 py-4">
-                        <p>Система кладмена с модным айфончиком</p>
-                    </div>
-                    <div class="w-full md:w-fit [&amp;:nth-child(1n)]:bg-card [&amp;:nth-child(2n)]:bg-secondary [&amp;:nth-child(4n)]:bg-primary [&amp;:nth-child(5n)]:bg-destructive rounded-lg flex items-center justify-center border border-[#363c44] text-foreground shadow-sm px-6 py-4">
-                        <p>Табачное производство</p>
-                    </div>
-                    <div class="w-full md:w-fit [&amp;:nth-child(1n)]:bg-card [&amp;:nth-child(2n)]:bg-secondary [&amp;:nth-child(4n)]:bg-primary [&amp;:nth-child(5n)]:bg-destructive rounded-lg flex items-center justify-center border border-[#363c44] text-foreground shadow-sm px-6 py-4">
-                        <p>Крафт оружия</p>
-                    </div>
-                    <div class="w-full md:w-fit [&amp;:nth-child(1n)]:bg-card [&amp;:nth-child(2n)]:bg-secondary [&amp;:nth-child(4n)]:bg-primary [&amp;:nth-child(5n)]:bg-destructive rounded-lg flex items-center justify-center border border-[#363c44] text-foreground shadow-sm px-6 py-4">
-                        <p>Система картин</p>
-                    </div>
-                    <div class="w-full md:w-fit [&amp;:nth-child(1n)]:bg-card [&amp;:nth-child(2n)]:bg-secondary [&amp;:nth-child(4n)]:bg-primary [&amp;:nth-child(5n)]:bg-destructive rounded-lg flex items-center justify-center border border-[#363c44] text-foreground shadow-sm px-6 py-4">
-                        <p>Собственная карта</p>
+                <div class="hero-title">
+                    <div class="title-row">
+                        <div class="text-cube-container">
+                            <div class="text-cube">
+                                <div class="cube-face front"><h1>Если MINECRAFT</h1></div>
+                                <div class="cube-face bottom"><h1>то <span class="highlight">MediumRP</span></h1></div>
+                                <div class="cube-face back"><h1>Если MINECRAFT</h1></div>
+                                <div class="cube-face top"><h1>то <span class="highlight">MediumRP</span></h1></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+                
+                <p class="description">
+                    Medium RP — классический DarkRP проект в жанре RP-Город. Мы перенесли
+                    легендарный режим из Garry's Mod прямо в Minecraft! Погрузись в детальную
+                    имитацию городской жизни: стань отчаянным бандитом и устраивай ограбления,
+                    или надень форму полицейского и защищай мирных жителей от криминала.
+                </p>
 
-            
-            <div class="h-screen flex flex-col justify-around items-center text-center px-2 md:px-0 lg:text-left lg:flex-row gap-8 snap-always snap-center">
-                <div class="flex flex-col justify-center">
-                    <p class="font-bold text-5xl md:text-7xl font-apercu">
-                        Medium <span class="text-primary">Community</span>
-                    </p>
-                    <p class="text-xl md:text-3xl md:w-[670px]">
-                        У нас дружелюбное и честное сообщество - мы не создаем миллионы правил, 
-                        загоняющих игроков в узкие рамки геймплея, а также оперативно отвечаем 
-                        на все предложения и замечания игроков. 
-                        <a href="https://discord.gg/DP3PMDm7Jk" class="text-primary hover:underline transition-colors" target="_blank" rel="noopener noreferrer">
-                            Присоединяйтесь!
-                        </a>
-                    </p>
+                <div class="actions">
+                    <a href="#" class="btn btn-outline">Узнать больше</a>
+                    <a href="#" class="btn btn-primary">Начать играть</a>
                 </div>
-                <iframe src="https://discord.com/widget?id=1285304825768181790&theme=dark" width="300" height="450" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
             </div>
-        </div>
+        </main>
     </div>
-    <script src="assets/js/main.js"></script>
 </body>
 </html>
-
-
-
